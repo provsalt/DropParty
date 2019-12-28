@@ -25,7 +25,7 @@ class DropParty extends PluginBase {
 		$this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
 		$this->cfg = $this->config->getAll();
 
-		$this->cfg = (new Config($this->getDataFolder() . "config.yml", Config::YAML)->getAll();
+		
 		
 
 		$this->time = $this->cfg["Time"];
