@@ -20,14 +20,14 @@ class DropParty extends PluginBase {
 	public $cfg;
 	
 	public function onEnable() {
-<<<<<<< HEAD
+
 		$this->saveResource("config.yml");
 		$this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
 		$this->cfg = $this->config->getAll();
-=======
+
 		$this->cfg = (new Config($this->getDataFolder() . "config.yml", Config::YAML)->getAll();
 		
->>>>>>> be52d3decfce114ebd85bee14bd38ed0a6694cb2
+
 		$this->time = $this->cfg["Time"];
 		$level = $this->getServer()->getLevelByName($this->cfg["World"]);
 		if ($level !== null) {
