@@ -49,4 +49,4 @@ You will need to generate a new config if you are running 1.0.4 or 1.0.5
 # Note:
 duration is in seconds
 time is how long before drop party starts in minute
->>>>>>> be52d3decfce114ebd85bee14bd38ed0a6694cb2
+
