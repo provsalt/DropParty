@@ -41,12 +41,6 @@ Items:
 ...
 
 ```
-<<<<<<< HEAD
 ## Note
 You will need to generate a new config if you are running 1.0.4 or 1.0.5
 2.0.0 config will __not__ have backward compatibility with 1.0.x
-=======
-# Note:
-duration is in seconds
-time is how long before drop party starts in minute
-
