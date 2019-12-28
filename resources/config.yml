@@ -1,0 +1,30 @@
+---
+# The world for the items to spawn the drop party in.
+World: world
+# Time before drop party starts in minutes
+Time: 10
+# Duration of the drop party in seconds
+Duration: 60
+# Messages.
+Message:
+  Started: §a[§6Drop§bParty§a] §dHas started! Do /spawn to get the items at the §5DropParty
+  Ended: §a[§6Drop§bParty§a] §dHas ended! Good game all.
+  Countdown: §a[§6Drop§bParty§a] §dis starting in §5{time} §dminutes.
+# Broadcast: "Coming soon." this will break since the task can not handle without another rewrite.
+# Popups creates a popup above the xp bar
+Popup:
+  Enabled: true
+  Message: §a[§6Drop§bParty§a] §dItems are dropping! §5Do /spawn to get those items!
+# Coordinates for it to spawn at
+Coordinates:
+  X: 10
+  Y: 80
+  Z: 10
+# Items to spawn in the drop party.
+# TODO PiggyCustomEnchants support.
+Items:
+- 57
+- 42
+- 22
+- 41
+...
