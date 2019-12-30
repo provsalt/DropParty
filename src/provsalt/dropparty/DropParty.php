@@ -35,8 +35,8 @@ class DropParty extends PluginBase {
 			$this->getScheduler()->scheduleRepeatingTask(new task\DropPartyTask($this), 20 * 60);
 			$this->getScheduler()->scheduleRepeatingTask(new task\DropItemsTask($this), 20);
 		}else {
-			$this->getLogger->warning("World not found!Please check your config and try again.");
-			$this->getServer->getPluginManager()->disablePlugin($this);
+			$this->getLogger()->warning("World not found!Please check your config and try again.");
+			$this->getServer()->getPluginManager()->disablePlugin($this);
 		}
 	}
 	
