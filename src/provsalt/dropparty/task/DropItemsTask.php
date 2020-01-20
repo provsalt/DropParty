@@ -26,7 +26,7 @@ class DropItemsTask extends Task {
 		    if($this->getPlugin()->config()["Popup"]["Enabled"] == true) {
 		      $this->getPlugin()->getServer()->broadcastPopup($this->getPlugin()->config()["Popup"]["Message"]);
 		}
-			$level->loadChunk($this->cfg["Coordinates"]["X"], $this->cfg["Coordinates"]["Z"]);
+			$level->loadChunk($this->plugin->cfg["Coordinates"]["X"], $this->plugin->cfg["Coordinates"]["Z"]);
 			$level->dropItem(new Vector3($this->getPlugin()->cfg["Coordinates"]["X"], $this->getPlugin()->cfg["Coordinates"]["Y"], $this->getPlugin()->cfg["Coordinates"]["Z"]), Item::get($this->getPlugin()->getRandomItem(), 0, mt_rand(1, 5)));
 			$this->getPlugin()->secs++;
 			
