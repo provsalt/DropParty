@@ -31,7 +31,7 @@ class DropParty extends PluginBase {
 		$this->time = $this->cfg["Time"];
 		$level = $this->getServer()->getLevelByName($this->cfg["World"]);
 		if ($level !== null) {
-			$level->loadChunk($this->cfg["Coordinates"]["X"], $this->cfg["Coordinates"]["Z"]);
+
 			$this->getScheduler()->scheduleRepeatingTask(new task\DropPartyTask($this), 20 * 60);
 			$this->getScheduler()->scheduleRepeatingTask(new task\DropItemsTask($this), 20);
 		}else {
