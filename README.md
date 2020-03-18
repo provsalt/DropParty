@@ -2,6 +2,8 @@
 Schedule DropParties on your server with this PocketMine Plugin!
 Simply setup the config.yml and enjoy automatic DropParties on your server!
 
+It has come to our attention that various users have been posting videos and **monetizing** download links to our plugins, If you are doing that, kindly fuck off.
+
 Config.yml
 ```
 ---
