@@ -7,7 +7,7 @@ use provsalt\dropparty\task\DropItemsTask;
 use provsalt\dropparty\task\DropPartyTask;
 use pocketmine\utils\Config;
 use pocketmine\scheduler\TaskScheduler;
-use pocketmine\level\Level;
+use pocketmine\world\World;
 use pocketmine\Server;
 
 class DropParty extends PluginBase {
@@ -19,7 +19,7 @@ class DropParty extends PluginBase {
 	public $config;
 	public $cfg;
 	
-	public function onEnable() {
+	public function onEnable(): void{
 
 		$this->saveResource("config.yml");
 		$this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
@@ -29,9 +29,9 @@ class DropParty extends PluginBase {
 		
 
 		$this->time = $this->cfg["Time"];
-		$level = $this->getServer()->getLevelByName($this->cfg["World"]);
+		$level = $this->getServer()->getWorldManager($this->cfg["World"]);
 		if ($level !== null) {
-			$level->loadChunk($this->cfg["Coordinates"]["X"], $this->cfg["Coordinates"]["Z"]);
+			$level->getWorld($this->cfg["Coordinates"]["X"], $this->cfg["Coordinates"]["Z"]);
 			$this->getScheduler()->scheduleRepeatingTask(new task\DropPartyTask($this), 20 * 60);
 			$this->getScheduler()->scheduleRepeatingTask(new task\DropItemsTask($this), 20);
 		}else {

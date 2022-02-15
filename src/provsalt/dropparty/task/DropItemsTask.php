@@ -2,10 +2,13 @@
 
 namespace provsalt\dropparty\task;
 
+use pocketmine\item\ItemFactory;
 use pocketmine\scheduler\Task;
+use pocketmine\Server;
 use pocketmine\item\Item;
 use pocketmine\utils\Config;
 use pocketmine\math\Vector3;
+use pocketmine\world\World;
 use provsalt\dropparty\DropParty;
 
 class DropItemsTask extends Task {
@@ -18,15 +21,15 @@ class DropItemsTask extends Task {
 		return $this->plugin;
 	}
 	
-	public function onRun(int $currentTick) {
+	public function onRun() : void{
 		
 		if($this->getPlugin()->status == "enabled") {
-		  $level = $this->getPlugin()->getServer()->getLevelByName($this->getPlugin()->cfg["World"]);
+		  $level = $this->getPlugin()->getServer()->getWorldManager()->getWorldByName($this->getPlugin()->cfg["World"]);
 			
 		    if($this->getPlugin()->config()["Popup"]["Enabled"] == true) {
 		      $this->getPlugin()->getServer()->broadcastPopup($this->getPlugin()->config()["Popup"]["Message"]);
 		}
-			$level->dropItem(new Vector3($this->getPlugin()->cfg["Coordinates"]["X"], $this->getPlugin()->cfg["Coordinates"]["Y"], $this->getPlugin()->cfg["Coordinates"]["Z"]), Item::get($this->getPlugin()->getRandomItem(), 0, mt_rand(1, 5)));
+			$level->dropItem(new Vector3($this->getPlugin()->cfg["Coordinates"]["X"], $this->getPlugin()->cfg["Coordinates"]["Y"], $this->getPlugin()->cfg["Coordinates"]["Z"]), ItemFactory::getInstance()->get($this->getPlugin()->getRandomItem(), 0, mt_rand(1, 5)));
 			$this->getPlugin()->secs++;
 			
 		}
